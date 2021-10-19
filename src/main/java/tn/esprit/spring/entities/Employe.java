@@ -1,6 +1,7 @@
 package tn.esprit.spring.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -64,11 +65,11 @@ public class Employe implements Serializable {
 	@OneToMany(mappedBy="employe")
 	private List<Timesheet> timesheets;
 	
-	public Employe() {
-		super();
-	}
 	
-		
+	
+    public Employe() {
+    	super();
+    };
 	public Employe(int id, String prenom, String nom, String email, String password, boolean actif, Role role) {
 		super();
 		this.id = id;
