@@ -45,7 +45,7 @@ public class EmployeServiceImplTest
 			
 		}
 		
-		
+		/*
 		@Test
 		@Order(2)
 		//Ajouter les donnes 
@@ -86,6 +86,7 @@ public class EmployeServiceImplTest
 			Assertions.assertNull(es.retrieveEmploye(30));
 	
 		}
+		*/
 		
 		// 5 tests unitaires  
  
