@@ -36,10 +36,11 @@ public class EmployeServiceImplTest
 	
 		@Test
 		@Order(1)
+		//size of list in Date base
 		public void testretrieveAllEmploye() {
 			List<Employe> listEmploye = es.retrieveAllEmploye(); 
 			// if there are 7 employe in DB : 
-			Assertions.assertEquals(5, listEmploye.size());
+			Assertions.assertEquals(2, listEmploye.size());
 		
 			
 		}
@@ -47,6 +48,7 @@ public class EmployeServiceImplTest
 		
 		@Test
 		@Order(2)
+		//Ajouter les donnes 
 		public void testAddEmploye() throws ParseException {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
@@ -58,27 +60,30 @@ public class EmployeServiceImplTest
 	 
 		@Test
 		@Order(3)
+		//modifier par ID
 		public void testModifyEmploye() throws ParseException   {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
-			Employe e = new Employe(1,"Mzoughi1","Mahdi1", "mahdi.mzoughi@esprit.tn" ,"123456789" ,true, Role.INGENIEUR); 
+			Employe e = new Employe(30,"Mzoughi1","Mahdi1", "mahdi.mzoughi@esprit.tn" ,"123456789" ,true, Role.INGENIEUR); 
 			Employe EmployeUpdated  = es.updateEmploye(e); 
 			Assertions.assertEquals(e.getId(), EmployeUpdated.getId());
 		}
 	
 		@Test
 		@Order(4)
+		//afficher par ID
 		public void testRetrieveEmploye() {
-			Employe EmployeRetrieved = es.retrieveEmploye(3); 
-			Assertions.assertEquals(3L, EmployeRetrieved.getId());
+			Employe EmployeRetrieved = es.retrieveEmploye(31); 
+			Assertions.assertEquals(31L, EmployeRetrieved.getId());
 		}
 		
 		@Test
 		@Order(5)
+		//Supprimer Par ID
 		public void testDeleteEmploye() {
 		
-			es.deleteEmploye(14);
-			Assertions.assertNull(es.retrieveEmploye(14));
+			es.deleteEmploye(30);
+			Assertions.assertNull(es.retrieveEmploye(30));
 	
 		}
 		

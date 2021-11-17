@@ -28,14 +28,14 @@ public class EmployeServiceImpl implements IEmployeService {
 		List<Employe> employes = null; 
 		try {
 	
-			l.info("In retrieveAllUsers() : ");
+			l.info("In retrieveAllEmploye() : ");
 			employes = (List<Employe>) employeRepository.findAll();  
 			for (Employe employe : employes) {
 				l.debug("user +++ : " + employe);
 			} 
-			l.info("Out of retrieveAllUsers() : ");
+			l.info("Out of retrieveAllEmploye() : ");
 		}catch (Exception e) {
-			l.error("Error in retrieveAllUsers() : " + e);
+			l.error("Error in retrieveAllEmploye() : " + e);
 		}
 
 		return employes;
@@ -62,9 +62,9 @@ public class EmployeServiceImpl implements IEmployeService {
 		Employe u = null;
 		try{
 			//l.info("in  retrieveUser id = " + id);
-			//User u =  userRepository.findById(Long.parseLong(id)).orElse(null);
+			//employer u =  userRepository.findById(Long.parseLong(id)).orElse(null);
 			u =  employeRepository.findById(id).get(); 
-			l.info("user returned : " + u);
+			l.info("employer returned : " + u);
 
 		}catch (Exception e) {
 			// TODO: handle exception
